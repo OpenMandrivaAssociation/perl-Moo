@@ -1,22 +1,22 @@
 %define upstream_name    Moo
 %define upstream_version 0.009008
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
-Summary:    Efficient generation of subroutines via string eval
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Efficient generation of subroutines via string eval
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Class::Method::Modifiers)
-BuildRequires: perl(Test::Fatal)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(strictures)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Class::Method::Modifiers)
+BuildRequires:	perl(Test::Fatal)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(strictures)
+BuildArch:	noarch
 
 %description
 This module is an extremely light-weight, high-performance the Moose
@@ -31,24 +31,22 @@ compatibility. See the /INCOMPATIBILITIES manpage for more details.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README META.yml Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Sat Jun 25 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.9.8-1mdv2011.0
++ Revision: 687049
+- import perl-Moo
 
