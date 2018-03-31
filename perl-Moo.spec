@@ -1,15 +1,15 @@
 %define upstream_name    Moo
-%define upstream_version 0.009008
+%define upstream_version 2.003004
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	1
 
 Summary:	Efficient generation of subroutines via string eval
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/M/MS/MSTROUT/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Class::Method::Modifiers)
@@ -19,13 +19,12 @@ BuildRequires:	perl(strictures)
 BuildArch:	noarch
 
 %description
-This module is an extremely light-weight, high-performance the Moose
-manpage replacement. It also avoids depending on any XS modules to allow
+This module is an extremely light-weight, high-performance perl-Moose
+replacement. It also avoids depending on any XS modules to allow
 simple deployments. The name 'Moo' is based on the idea that it provides
-almost -but not quite- two thirds of the Moose manpage.
+almost -but not quite- two thirds of the Moose functionality.
 
-Unlike 'Mouse' this module does not aim at full the Moose manpage
-compatibility. See the /INCOMPATIBILITIES manpage for more details.
+Unlike 'Mouse' this module does not aim at full Moose compatibility.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
@@ -44,9 +43,3 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc README META.yml Changes
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-%changelog
-* Sat Jun 25 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.9.8-1mdv2011.0
-+ Revision: 687049
-- import perl-Moo
-
