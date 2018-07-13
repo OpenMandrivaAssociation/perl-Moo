@@ -11,6 +11,10 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires:	perl(Sub::Quote)
+BuildRequires:	perl(Role::Tiny)
+BuildRequires:	perl(Module::Runtime)
+BuildRequires:	perl(Devel::GlobalDestruction)
 BuildRequires:	perl-devel
 BuildRequires:	perl(Class::Method::Modifiers)
 BuildRequires:	perl(Test::Fatal)
