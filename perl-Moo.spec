@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	4
 
 Summary:	Efficient generation of subroutines via string eval
 License:	GPL+ or Artistic
@@ -35,13 +35,10 @@ Unlike 'Mouse' this module does not aim at full Moose compatibility.
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
-
-%check
-%make test
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc README META.yml Changes
