@@ -1,9 +1,9 @@
 %define upstream_name    Moo
-%define upstream_version 2.003004
+%define upstream_version 2.005004
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	1
 
 Summary:	Efficient generation of subroutines via string eval
 License:	GPL+ or Artistic
