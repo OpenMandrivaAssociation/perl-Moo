@@ -8,7 +8,7 @@ Release:	2
 Summary:	Efficient generation of subroutines via string eval
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://metacpan.org/pod/Moo
+Url:		https://metacpan.org/pod/Moo
 Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl(Sub::Quote)
