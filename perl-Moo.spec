@@ -1,15 +1,14 @@
 %define upstream_name    Moo
-%define upstream_version 2.005004
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	2.005005
+Release:	1
 
 Summary:	Efficient generation of subroutines via string eval
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Moo
-Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	perl(Sub::Quote)
 BuildRequires:	perl(Role::Tiny)
@@ -31,7 +30,7 @@ almost -but not quite- two thirds of the Moose functionality.
 Unlike 'Mouse' this module does not aim at full Moose compatibility.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
