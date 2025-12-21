@@ -10,6 +10,7 @@ Group:		Development/Perl
 Url:		https://metacpan.org/pod/Moo
 Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/%{upstream_name}-%{version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:	perl(Sub::Quote)
 BuildRequires:	perl(Role::Tiny)
 BuildRequires:	perl(Module::Runtime)
